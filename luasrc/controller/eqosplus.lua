@@ -4,7 +4,7 @@ function index()
     if not nixio.fs.access("/etc/config/eqosplus") then return end
     entry({"admin", "network"}, firstchild(), "network", 44).dependent = false
 
-    local e = entry({"admin", "network", "eqosplus"}, cbi("eqosplus"), _("Eqosplus"), 10)
+    local e = entry({"admin", "network", "eqosplus"}, cbi("eqosplus"), _("Eqosplus"), 20)
     e.dependent=false
     e.acl_depends = { "luci-app-eqosplus" }
     entry({"admin", "network", "eqosplus", "status"}, call("act_status")).leaf = true
